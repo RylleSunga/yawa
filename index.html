@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Green Portfolio</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
+
+body{background:#f4f8f4;color:#2e3d2f;transition:.3s}
+body.dark{background:#1b2a1f;color:#e6f0e8}
+
+header{position:fixed;width:100%;top:0;display:flex;justify-content:space-between;align-items:center;padding:15px 8%;background:#ffffffcc;backdrop-filter:blur(10px);z-index:1000}
+body.dark header{background:#24382a}
+
+nav a{margin-left:20px;text-decoration:none;color:inherit;position:relative}
+nav a::after{content:'';position:absolute;width:0;height:2px;background:#588157;left:0;bottom:-5px;transition:.3s}
+nav a:hover::after{width:100%}
+
+.toggle{cursor:pointer}
+
+section{padding:100px 10%;min-height:100vh;opacity:0;transform:translateY(40px);transition:1s}
+section.show{opacity:1;transform:translateY(0)}
+
+/* HOME */
+.home{text-align:center;display:flex;flex-direction:column;justify-content:center}
+.typing{color:#588157;font-weight:600}
+.home img{width:120px;border-radius:50%;margin:20px auto}
+
+/* ABOUT */
+.about{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.about img{width:260px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.about-text{max-width:500px}
+.about-text h2{margin-bottom:10px}
+.about-info p{margin:5px 0}
+
+.skills{margin-top:20px}
+.bar{background:#dcdcdc;height:10px;border-radius:20px;margin:10px 0}
+.bar div{height:10px;background:#588157;border-radius:20px}
+
+/* WORKS */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.card{background:white;border-radius:20px;overflow:hidden;cursor:pointer;transition:.3s}
+body.dark .card{background:#2e4435}
+.card:hover{transform:translateY(-10px) scale(1.03)}
+.card img{width:100%;height:220px;object-fit:cover}
+.card-content{padding:15px}
+
+/* CONTACT */
+.contact{text-align:center}
+.contact i{font-size:2rem;margin:10px;cursor:pointer;transition:.3s}
+.contact i:hover{color:#588157;transform:scale(1.2)}
+
+/* FEEDBACK */
+.feedback form{max-width:500px;margin:auto;display:flex;flex-direction:column}
+input,textarea{margin:10px 0;padding:12px;border-radius:10px;border:none;background:#e9f0ea}
+button{padding:12px;border:none;border-radius:25px;background:#588157;color:white;cursor:pointer}
+button:hover{opacity:.8}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);display:none;justify-content:center;align-items:center}
+.lightbox img{max-width:80%;border-radius:10px}
+
+footer{text-align:center;padding:20px;background:#dad7cd}
+
+@media(max-width:768px){.about{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+
+<header>
+<h2>Your Name</h2>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#works">Works</a>
+<a href="#contact">Contact</a>
+<a href="#feedback">Feedback</a>
+</nav>
+<i class="fa-solid fa-moon toggle" onclick="toggleDark()"></i>
+</header>
+
+<!-- HOME -->
+<section class="home" id="home">
+<img src="https://picsum.photos/200" alt="profile">
+<h1>Hello, I'm <span class="typing"></span></h1>
+<p>A passionate graphic designer creating clean and aesthetic visuals.</p>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+<img src="https://picsum.photos/300?grayscale" alt="about">
+<div class="about-text">
+<h2>About Me</h2>
+<p>Hi! I'm a creative graphic designer who loves making minimalist and visually pleasing designs. I enjoy working with branding, posters, and social media content.</p>
+
+<div class="about-info">
+<p><b>Name:</b> Your Name</p>
+<p><b>Age:</b> Your Age</p>
+<p><b>Location:</b> Philippines</p>
+<p><b>Specialty:</b> Graphic Design</p>
+</div>
+
+<div class="skills">
+<p>Canva</p>
+<div class="bar"><div style="width:90%"></div></div>
+<p>Photoshop</p>
+<div class="bar"><div style="width:80%"></div></div>
+<p>Illustrator</p>
+<div class="bar"><div style="width:70%"></div></div>
+</div>
+</div>
+</section>
+
+<!-- WORKS -->
+<section id="works">
+<h2>My Works</h2>
+<div class="projects">
+
+<div class="card">
+<img src="https://picsum.photos/400?1">
+<div class="card-content"><h3>Poster Design</h3><p>Modern promotional poster.</p></div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/400?2">
+<div class="card-content"><h3>Logo Design</h3><p>Clean branding concept.</p></div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/400?3">
+<div class="card-content"><h3>Social Media Pubmat</h3><p>Engaging content design.</p></div>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<h2>Contact Me</h2>
+<p>Email: your@email.com</p>
+<p>Phone: 09XXXXXXXXX</p>
+<div>
+<i class="fa-brands fa-facebook"></i>
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-solid fa-envelope"></i>
+</div>
+</section>
+
+<!-- FEEDBACK -->
+<section class="feedback" id="feedback">
+<h2>Feedback</h2>
+<form action="https://formspree.io/f/mayvlqzb" method="POST">
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<textarea name="message" placeholder="Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+
+<div class="lightbox" onclick="this.style.display='none'"><img></div>
+
+<footer>
+<p>© 2026 Your Name | Portfolio</p>
+</footer>
+
+<script>
+// typing
+const words=["Graphic Designer","Creative Artist","Visual Creator"];
+let i=0,j=0,current="",isDeleting=false;
+function type(){
+current=words[i];
+document.querySelector('.typing').textContent=current.substring(0,j);
+if(!isDeleting){j++;if(j>current.length){isDeleting=true;setTimeout(type,1000);return}}
+else{j--;if(j==0){isDeleting=false;i=(i+1)%words.length}}
+setTimeout(type,isDeleting?50:100)}
+type();
+
+// scroll
+const sections=document.querySelectorAll('section');
+window.addEventListener('scroll',()=>{
+sections.forEach(sec=>{
+if(window.scrollY>sec.offsetTop-400){sec.classList.add('show')}})})
+
+// lightbox
+const imgs=document.querySelectorAll('.card img');
+const lightbox=document.querySelector('.lightbox');
+const lightImg=lightbox.querySelector('img');
+imgs.forEach(img=>{img.onclick=()=>{lightbox.style.display='flex';lightImg.src=img.src}})
+
+// dark
+function toggleDark(){document.body.classList.toggle('dark')}
+</script>
+
+</body>
+</html>
